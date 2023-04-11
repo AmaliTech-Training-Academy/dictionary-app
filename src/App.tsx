@@ -1,10 +1,12 @@
-import React from 'react';
-import './App.css';
+import './App.scss';
+import Header from './components/Header';
+import Search from './components/Search';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      dictionary app
+      <Header />
+      <Search />
     </div>
   );
 }
