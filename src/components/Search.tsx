@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import searchLogo from '../assets/images/icon-search.svg';
 import '../assets/styles/Search.scss';
 
-const Search: React.FC = () => {
+interface searchProps{
+  onSubmit: (searchTerm: string) => void;
+}
+
+const Search: React.FC<searchProps> = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('keyboard');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    onSubmit(searchTerm);
     setSearchTerm('');
-      
+    
   }
-  
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

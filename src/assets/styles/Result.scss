@@ -1,0 +1,70 @@
+
+$phonetics-synonyms-color: #A445ED;
+$meaning-synonyms-example-color: #838383;
+
+.response-div{
+  display: flex;
+    width: 100%;
+    min-height: 40rem;
+    margin-top: 1rem;
+
+    .word-audio-div{
+       flex-direction: row;
+       width: 100%;
+       min-height: 4rem;
+
+        .word-phonetics-span{
+            line-height: 12px;
+            margin: 0;
+
+            h2{
+                font-size: 43px; 
+            }
+            p{
+                font-size: 18px;
+            }
+            .phonetics{
+                color: $phonetics-synonyms-color;
+            }
+        }
+    }
+    .noun-verb-divs-container{
+        div{
+            margin-top: 0;
+        }
+        ul{
+            line-height: 25px;
+        }
+        h4{
+            font-size: 21px;
+        }
+        h5{
+            font-size: 16px;
+            font-weight: 400;
+            color: $meaning-synonyms-example-color;
+        }
+        .noun-verb-div{
+            .synonyms-paragraph{
+                display: flex;
+                margin-top: 50px;
+                gap: 20px;
+            }
+            .synonyms{
+                color: $phonetics-synonyms-color;
+            }
+            .synonyms-word{
+                color: $meaning-synonyms-example-color;
+            }
+            .example{
+                color: $meaning-synonyms-example-color;
+            }
+        }
+    }
+    .link-span{
+        justify-content: flex-start;
+        gap: 12px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+}
