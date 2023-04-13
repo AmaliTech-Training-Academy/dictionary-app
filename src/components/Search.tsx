@@ -4,18 +4,23 @@ import '../assets/styles/Search.scss';
 import EmptyText from './validation message/EmptyText';
 import WordNotFound from './validation message/WordNotFound';
 
-const Search: React.FC = () => {
+interface searchProps{
+  onSubmit: (searchTerm: string) => void;
+}
+
+const Search: React.FC<searchProps> = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('keyboard');
   const [emptySearchBox, setEmptySearchBox] = useState<boolean>(false)
 
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    onSubmit(searchTerm);
     validate();
     setSearchTerm('');
-      
+    
   }
-  
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
