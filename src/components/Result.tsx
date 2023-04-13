@@ -6,7 +6,7 @@ interface resultProps{
     result: DictionaryData[];
 }
 export const Result: React.FC<resultProps> = ({ result }) => {
-    
+
     return (
         <div className="response-div">
             {result.map((data, index) => (
@@ -31,7 +31,10 @@ export const Result: React.FC<resultProps> = ({ result }) => {
                                         </div>
                                     ))}
                                 </ul>
-                                <p className="synonyms-paragraph"><span className="synonyms-word">Synonyms</span>  <span className="synonyms">{meaning.synonyms[0]}</span></p>
+                                <p className="synonyms-paragraph">
+                                    <span className="synonyms-word">Synonyms</span>
+                                    <span className="synonyms">{meaning.synonyms[0]}</span>
+                                </p>
                             </div>
                         ))}
                     </div>
