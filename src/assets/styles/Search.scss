@@ -43,6 +43,7 @@
     color: $error;
     font-family: inherit;
     font-weight: 400;
+    margin-top: 2px;
     input{
             border: 1px solid $error;
         &:focus{
