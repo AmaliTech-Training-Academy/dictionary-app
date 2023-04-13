@@ -6,7 +6,7 @@ interface resultProps{
     result: DictionaryData[];
 }
 export const Result: React.FC<resultProps> = ({ result }) => {
-
+    
     return (
         <div className="response-div">
             {result.map((data, index) => (
