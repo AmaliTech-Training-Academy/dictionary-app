@@ -2,4 +2,37 @@
   width: 50%;
   margin: 0 auto;
 }
+ 
+$background: #050505;
+$transparentDark:#1F1F1F;
+$light:#fff;
+$error:#FF5252;
+.darkTheme{
+      background-color:$background;
+      color: $light;
+
+      form>input{
+        background-color: $transparentDark;
+        color: $light;
+        border: 3px solid $transparentDark;
+       
+      }
+
+      form>button{
+        background-color: $transparentDark;
+      }
+
+      .validate{
+        input{
+          border: 1px solid $error;
+        }
+      }
+
+}
+
+
+.lightTheme{
+   background-color: $light;
+
+}
 
