@@ -36,3 +36,43 @@
         right: 2px;
     }
 }
+
+
+    $error: #FF5252;
+.validate{
+    color: $error;
+    font-family: inherit;
+    font-weight: 400;
+    input{
+            border: 1px solid $error;
+        &:focus{
+            border: 1px solid $error;
+        }
+    }
+
+}
+
+.wordNotFound{
+     margin-top: auto;
+     margin-bottom: auto;
+     text-align: center;
+     font-family: inherit;
+     .emoji{
+        padding-top: 100px;
+        font-weight: 400;
+        font-size: 64px;
+     }
+     h2{
+        font-size: 20px;
+        
+    }
+     p{
+       width: 90%;
+        font-size:18px ;
+        color: #757575;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        
+     }
+}
