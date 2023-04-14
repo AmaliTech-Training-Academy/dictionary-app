@@ -14,7 +14,7 @@ export interface DictionaryData {
     }[];
     sourceUrls: string[];
   }
-
+  
 export const fetchWord = async (word: string):Promise<DictionaryData[]> => {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     const data = response.json();

@@ -7,8 +7,18 @@ $meaning-synonyms-example-color: #838383;
     width: 100%;
     min-height: 40rem;
     margin-top: 1rem;
+    .response{
+        hr{
+            margin-top: 35px;
+            margin-bottom: 0;
+            border-top: 0.1px solid rgba(117, 117, 117, 0.1);
+        }
+    }
 
     .word-audio-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
        flex-direction: row;
        width: 100%;
        min-height: 5rem;
@@ -44,6 +54,29 @@ $meaning-synonyms-example-color: #838383;
             color: $meaning-synonyms-example-color;
         }
         .noun-verb-div{
+            .noun-verb{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: 300;
+            }
+            .noun-verb::after {
+                content: '';
+                padding-left: 10px;
+                flex: 0.97 1 auto;
+                border-bottom: 2px solid rgba(117, 117, 117, 0.1);
+            }
+            ul{
+                list-style: none;
+            }
+            ul li::before {
+                content: "\2022";
+                color: $phonetics-synonyms-color;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+              }
             .synonyms-paragraph{
                 display: flex;
                 margin-top: 50px;
@@ -51,6 +84,7 @@ $meaning-synonyms-example-color: #838383;
             }
             .synonyms{
                 color: $phonetics-synonyms-color;
+                font-weight: 500;
             }
             .synonyms-word{
                 color: $meaning-synonyms-example-color;
@@ -62,9 +96,27 @@ $meaning-synonyms-example-color: #838383;
     }
     .link-span{
         justify-content: flex-start;
-        gap: 12px;
+        gap: 20px;
+        margin-top: 0;
+        padding-top: 0;
         align-items: center;
         display: flex;
         flex-direction: row;
+        #source-word{
+            border-bottom: 2px solid rgba(117, 117, 117, 0.5);
+            line-height: 12px;
+            font-size: 13px;
+            font-weight: 400;
+            color: $meaning-synonyms-example-color;
+        }
+        .url{
+            font-weight: 300;
+            display: flex;
+            gap: 12px;
+            #http{
+                font-size: 14px;
+                color: black;
+            }
+        }
     }
 }
