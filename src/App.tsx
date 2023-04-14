@@ -21,8 +21,14 @@ const App: React.FC = () => {
   )
   
   const context = useContext(ThemeContext);
-  const {toggle}=context;
- 
+  const {toggle, setToggle} = context;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const prefersDarkMode = mediaQuery.matches;
+    setToggle(prefersDarkMode);
+  }, [setToggle]);
+  
   const handleSearch = async (word: string) => {
     const data = await fetchWord(word);
     setSearchResult(data);
