@@ -47,8 +47,7 @@ const Search: React.FC<searchProps> = ({ onSubmit }) => {
       />
       <button type="submit"><img src={searchLogo} alt="Search Logo" /></button>
     </form>
-    {emptySearchBox && <EmptyText/>}
-    
+    {emptySearchBox && <EmptyText/>}  
     </>
   );
 };
