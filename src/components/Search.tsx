@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import searchLogo from '../assets/images/icon-search.svg';
 import '../assets/styles/Search.scss';
 import EmptyText from './validation message/EmptyText';
-import WordNotFound from './validation message/WordNotFound';
 
 interface searchProps{
   onSubmit: (searchTerm: string) => void;
@@ -17,7 +16,6 @@ const Search: React.FC<searchProps> = ({ onSubmit }) => {
     event.preventDefault();
     onSubmit(searchTerm);
     validate();
-    setSearchTerm('');
     
   }
 

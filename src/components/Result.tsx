@@ -2,8 +2,7 @@ import React from "react";
 import { DictionaryData } from "../wordAPI";
 import '../assets/styles/Result.scss';
 import AudioPlayer from "./AudioPlayer";
-import logo from '../assets/images/icon-new-window.svg'
-import WordNotFound from "./validation message/WordNotFound";
+import logo from '../assets/images/icon-new-window.svg';
 import { spawn } from "child_process";
 import Loading from "./Loading";
 interface resultProps{
