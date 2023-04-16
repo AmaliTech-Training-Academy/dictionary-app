@@ -10,6 +10,7 @@ $error:#FF5252;
 .darkTheme{
       background-color:$background;
       color: $light;
+      min-height: 100vh;
 
       form>input{
         background-color: $transparentDark;
@@ -34,5 +35,81 @@ $error:#FF5252;
 .lightTheme{
    background-color: $light;
 
+}
+
+
+
+@media screen and (max-width:1200px){
+  
+  .App{
+     width: 70%;
+
+     input{
+       width:102% !important;
+     }
+   
+  }
+}
+
+
+@media screen and (max-width:930px){
+  
+  .App{
+     width: 85%;
+
+
+     .word-phonetics-span{
+        h2{
+          font-size: 64px !important;
+        }
+     }
+
+
+  }
+
+}
+
+@media screen and (max-width:550px){
+
+  .App{
+    width: 85%;
+
+    .word-phonetics-span{
+       h2{
+         font-size: 32px !important;
+       }
+    }
+
+ }
+
+
+  
+}
+
+
+
+
+
+
+@media screen and (max-width:350px) {
+
+
+    .App{
+      margin-left: 5px;
+      padding-right: 10px;
+     
+    }
+   .darkTheme{
+     min-width:100vw;
+  
+
+   *{
+    background-color: inherit;
+   }
+
+
+   }
+
+  
 }
 

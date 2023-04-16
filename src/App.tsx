@@ -21,7 +21,7 @@ const App: React.FC = () => {
   )
   
   const context = useContext(ThemeContext);
-  const {toggle}=context;
+  const {toggle,emptySearchBox}=context;
  
   const handleSearch = async (word: string) => {
     const data = await fetchWord(word);
@@ -35,7 +35,7 @@ const App: React.FC = () => {
             <Header />
             <Search onSubmit={handleSearch}/>
             {!Array.isArray(searchResult) ? (
-        <WordNotFound />
+        !emptySearchBox && <WordNotFound />
       ) : (
         <Result result={searchResult}/>
       )}

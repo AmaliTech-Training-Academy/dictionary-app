@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import searchLogo from '../assets/images/icon-search.svg';
 import '../assets/styles/Search.scss';
 import EmptyText from './validation message/EmptyText';
+import { ThemeContext } from '../ThemeContext';
 import WordNotFound from './validation message/WordNotFound';
 
 interface searchProps{
@@ -10,7 +11,8 @@ interface searchProps{
 
 const Search: React.FC<searchProps> = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('keyboard');
-  const [emptySearchBox, setEmptySearchBox] = useState<boolean>(false)
+  const context = useContext(ThemeContext);
+   const {emptySearchBox,setEmptySearchBox}= context;
 
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +39,7 @@ const Search: React.FC<searchProps> = ({ onSubmit }) => {
   }
 
   return (
-    <>
+    <div className='responsiveForm'>
     <form onSubmit={handleSubmit} className={!emptySearchBox?'search':'search validate'}>
       <input
         type="text"
@@ -47,8 +49,8 @@ const Search: React.FC<searchProps> = ({ onSubmit }) => {
       />
       <button type="submit"><img src={searchLogo} alt="Search Logo" /></button>
     </form>
-    {emptySearchBox && <EmptyText/>}  
-    </>
+     {emptySearchBox && <EmptyText/>}
+    </div>
   );
 };
 
