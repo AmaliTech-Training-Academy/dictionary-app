@@ -3,8 +3,6 @@ import { DictionaryData } from "../wordAPI";
 import '../assets/styles/Result.scss';
 import AudioPlayer from "./AudioPlayer";
 import logo from '../assets/images/icon-new-window.svg'
-import WordNotFound from "./validation message/WordNotFound";
-import { spawn } from "child_process";
 interface resultProps{
     result: DictionaryData[];
 }
@@ -43,7 +41,7 @@ export const Result: React.FC<resultProps> = ({ result }) => {
                                             <span>
                                                 <p className="synonyms-paragraph">
                                                     <span className="synonyms-word">Synonyms</span>
-                                                    <span className="synonyms">{meaning.synonyms[0]}</span>
+                                                    <a href={`www.google/search?q=${meaning.synonyms[0]}`} target="_blank"><span className="synonyms">{meaning.synonyms[0]}</span></a>
                                                 </p>
                                             </span> }
                                     
