@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 
 const EmptyText:React.FC= () => {
-
   useEffect(() => {
     const loader = document.querySelector('.loader') as HTMLElement;
-    loader.style.display = 'none';
+    if(loader){
+      loader.style.display = 'none';
+    }
   });
 
   return (

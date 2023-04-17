@@ -52,10 +52,8 @@ const App: React.FC = () => {
         <div className="App">
             <Header onChange={handleFontFamily} font={fontFamily}/>
             <Search onSubmit={handleSearch}/>
-            {!Array.isArray(searchResult) ? (
-        !emptySearchBox && <WordNotFound />
             { searchResult[0] === undefined && searchResult.length !== 0 ? (
-        <WordNotFound />
+        !emptySearchBox && <WordNotFound />
       ) : (
         <Result result={searchResult} loading={isLoading}/>
       )}
