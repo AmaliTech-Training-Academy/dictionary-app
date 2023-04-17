@@ -91,6 +91,14 @@ $meaning-synonyms-example-color: #838383;
                 color: $phonetics-synonyms-color;
                 font-weight: 500;
             }
+            a{
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                    text-decoration-color: #A445ED;
+                    text-decoration-thickness: 1px;
+                }
+            }
             .synonyms-word{
                 color: $meaning-synonyms-example-color;
             }
