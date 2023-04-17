@@ -5,6 +5,11 @@
     color: inherit;
     background-color: inherit;
 
+    .font-toggle-group{
+        display: flex;
+        flex-direction: row;
+        
+    }
     img{
         width:32px;
     }
