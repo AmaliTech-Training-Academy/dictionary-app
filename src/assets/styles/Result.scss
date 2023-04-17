@@ -2,6 +2,11 @@
 $phonetics-synonyms-color: #A445ED;
 $meaning-synonyms-example-color: #838383;
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .response-div{
   display: flex;
     width: 100%;

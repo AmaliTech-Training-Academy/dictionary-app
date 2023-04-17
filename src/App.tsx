@@ -11,6 +11,7 @@ import WordNotFound from './components/validation message/WordNotFound';
 const App: React.FC = () => {
 
   const [searchResult, setSearchResult] = useState<DictionaryData[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [fontFamily, setFontFamily] = useState<string>('sans-serif');
   
   useEffect(
@@ -36,7 +37,10 @@ const App: React.FC = () => {
   }, [setToggle]);
   
   const handleSearch = async (word: string) => {
+    setIsLoading(true);
     const data = await fetchWord(word);
+    setSearchResult(data);
+    setIsLoading(false);
     const first_object_array: DictionaryData[] = [];
     first_object_array.push(data[0])
     setSearchResult(first_object_array);
@@ -51,7 +55,7 @@ const App: React.FC = () => {
             { searchResult[0] === undefined && searchResult.length !== 0 ? (
         <WordNotFound />
       ) : (
-        <Result result={searchResult}/>
+        <Result result={searchResult} loading={isLoading}/>
       )}
         </div>
     </div>
