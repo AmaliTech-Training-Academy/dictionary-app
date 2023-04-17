@@ -47,3 +47,24 @@
         }
     }
 }
+
+@media screen and (max-width: 380px){
+    .select-container{
+        display: flex;
+        min-width: 100px;
+        right: 3px;
+    }
+    .select-button{
+        display: flex;
+        padding: 0;
+        gap: 1px;
+        justify-content: flex-end;
+    }
+    #arrow-svg{
+        width: 13px;
+        height: 10px;
+        margin-left: 4px;
+        
+    }
+    
+}
