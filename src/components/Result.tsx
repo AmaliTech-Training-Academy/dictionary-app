@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { DictionaryData } from "../wordAPI";
 import '../assets/styles/Result.scss';
 import AudioPlayer from "./AudioPlayer";
 import logo from '../assets/images/icon-new-window.svg';
 import { spawn } from "child_process";
+
+import { ThemeContext } from "../ThemeContext";
+import EmptyText from "./validation message/EmptyText";
+
 import Loading from "./Loading";
-import logo from '../assets/images/icon-new-window.svg'
+
 interface resultProps{
     result: DictionaryData[];
     loading: boolean;
 }
+export const Result: React.FC<resultProps> = ({ result }) => {
+    const context = useContext(ThemeContext);
+    const {emptySearchBox}= context;
+
+        return (
+            <div>
+            {!emptySearchBox &&
+
 export const Result: React.FC<resultProps> = ({ result, loading }) => {
 
         return (
@@ -81,6 +93,7 @@ export const Result: React.FC<resultProps> = ({ result, loading }) => {
               }
             </>
         );
+
             <div className="response-div">
                 {result.map((data, index) => (
                     <div className="response" key={index}>
@@ -136,6 +149,7 @@ export const Result: React.FC<resultProps> = ({ result, loading }) => {
                         </span>
                     </div>
                 ))}
+            </div>}
             </div>
         )
     

@@ -28,7 +28,7 @@ const App: React.FC = () => {
   }
   
   const context = useContext(ThemeContext);
-  const {toggle, setToggle} = context;
+  const {toggle, setToggle,emptySearchBox} = context;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -52,6 +52,8 @@ const App: React.FC = () => {
         <div className="App">
             <Header onChange={handleFontFamily} font={fontFamily}/>
             <Search onSubmit={handleSearch}/>
+            {!Array.isArray(searchResult) ? (
+        !emptySearchBox && <WordNotFound />
             { searchResult[0] === undefined && searchResult.length !== 0 ? (
         <WordNotFound />
       ) : (

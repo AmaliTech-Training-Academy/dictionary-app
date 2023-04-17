@@ -33,10 +33,11 @@ $meaning-synonyms-example-color: #838383;
             margin: 0;
 
             h2{
-                font-size: 43px; 
+                font-size: 64px; 
             }
             p{
-                font-size: 18px;
+                font-size: 24px;
+                font-weight: 400;
             }
             .phonetics{
                 color: $phonetics-synonyms-color;
@@ -51,7 +52,9 @@ $meaning-synonyms-example-color: #838383;
             line-height: 25px;
         }
         h4{
-            font-size: 21px;
+            font-size: 24px;
+           
+            font-weight: 700;
         }
         h5{
             font-size: 16px;
@@ -63,7 +66,7 @@ $meaning-synonyms-example-color: #838383;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                font-weight: 300;
+                font-weight: 400;
             }
             .noun-verb::after {
                 content: '';
@@ -81,6 +84,8 @@ $meaning-synonyms-example-color: #838383;
                 display: inline-block; 
                 width: 1em;
                 margin-left: -1em;
+                font-size: 18px;
+                
               }
             .synonyms-paragraph{
                 display: flex;
@@ -128,8 +133,40 @@ $meaning-synonyms-example-color: #838383;
             gap: 12px;
             #http{
                 font-size: 14px;
-                color: black;
+                color: inherit;
             }
         }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:380px) {
+    .response-div{
+        min-width: 285px; 
+        margin-left: 10px;
+        margin-right: 10px !important;
+    }
+    li{
+        font-size: 15px;
+    }
+
+    .response-div .word-audio-div{
+    width: 90%;
+    margin-left: 10px;
+    }
+
+    .noun-verb-div{
+       margin-right: 10px;
+       width: auto;
+       margin-left: 10px;
+    }
+
+
+    h4{
+        font-size: 18px !important;
     }
 }

@@ -4,7 +4,8 @@ export const ThemeContext = React.createContext<any>({});
 
 export const ThemeProvider:React.FC<any> = ({children}) => {
 
-  const [toggle, setToggle] = useState<boolean>(false);
+    const [toggle, setToggle] =useState<boolean>(false);
+    const [emptySearchBox, setEmptySearchBox] =useState<any>(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -12,10 +13,10 @@ export const ThemeProvider:React.FC<any> = ({children}) => {
     mediaQuery.addEventListener('change', onChange);
     return () => mediaQuery.removeEventListener('change', onChange);
   }, []);
-
-  return (
-    <ThemeContext.Provider value={{toggle,setToggle}}>
-      {children}
+  
+    return (
+    <ThemeContext.Provider value={{toggle,setToggle,emptySearchBox,setEmptySearchBox}}>
+        {children}           
     </ThemeContext.Provider>
   )
 }
