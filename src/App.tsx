@@ -20,7 +20,7 @@ const App: React.FC = () => {
         handleSearch('keyboard');
         console.log(searchResult)
       }
-    },[searchResult]
+    }
   )
 
   const handleFontFamily = (param: string) => {

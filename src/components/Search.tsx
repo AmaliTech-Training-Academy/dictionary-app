@@ -4,7 +4,6 @@ import '../assets/styles/Search.scss';
 import EmptyText from './validation message/EmptyText';
 
 import { ThemeContext } from '../ThemeContext';
-import WordNotFound from './validation message/WordNotFound';
 
 
 interface searchProps{

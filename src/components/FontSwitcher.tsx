@@ -8,7 +8,6 @@ export interface FontSwitcherProps{
   }
 
 export const FontSwitcher:React.FC<FontSwitcherProps> = (props) => {
-    const [isHidden, setIsHidden] = useState(false);
 
     const options = [
         { value: 'sans-serif', label: 'Sans Serif' },

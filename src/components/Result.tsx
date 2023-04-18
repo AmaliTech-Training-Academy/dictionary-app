@@ -3,10 +3,7 @@ import { DictionaryData } from "../wordAPI";
 import '../assets/styles/Result.scss';
 import AudioPlayer from "./AudioPlayer";
 import logo from '../assets/images/icon-new-window.svg';
-import { spawn } from "child_process";
-
 import { ThemeContext } from "../ThemeContext";
-import EmptyText from "./validation message/EmptyText";
 
 import Loading from "./Loading";
 
@@ -22,12 +19,12 @@ export const Result: React.FC<resultProps> = ({ result, loading }) => {
 
         return (
             <div>
-            {emptySearchBox &&
+            {!emptySearchBox &&
               loading ? (
                 <div className="loading">
                     <Loading />
                 </div> 
-              ) : (
+              ) : ( !emptySearchBox &&
                   <div className="response-div">
                   {result.map((data, index) => (
                       <div className="response" key={index}>
@@ -71,10 +68,10 @@ export const Result: React.FC<resultProps> = ({ result, loading }) => {
                           <span className="link-span">
                               <h5 id="source-word">Source</h5>
                               <span className="url">
-                                  <a id="http" href={data.sourceUrls[0]} target="_blank" >
+                                  <a id="http" href={data.sourceUrls[0]} target="_blank" rel="noreferrer">
                                       {data.sourceUrls[0]} 
                                   </a>
-                                  <a href={data.sourceUrls[0]} target="_blank" >
+                                  <a href={data.sourceUrls[0]} target="_blank" rel="noreferrer">
                                       <span>
                                           <img src={logo} alt="new window" />
                                       </span>
