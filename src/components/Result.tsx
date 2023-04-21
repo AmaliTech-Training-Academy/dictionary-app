@@ -64,7 +64,6 @@ export const Result: React.FC<resultProps> = ({ result, loading }) => {
                                   </div>
                               ))}
                           </div>
-                          <hr />
                           <span className="link-span">
                               <h5 id="source-word">Source</h5>
                               <span className="url">
